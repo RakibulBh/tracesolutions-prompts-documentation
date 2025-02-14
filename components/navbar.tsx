@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="h-20 border-b border-b-gray-100 bg-white p-4 items-center justify-between flex">
+    <div className="h-20 border-b-2 border-b-gray-200 p-4 items-center justify-between flex bg-[#F3F8F2]">
       <div className="flex gap-4 items-center">
         <Image
           className="rounded-full"

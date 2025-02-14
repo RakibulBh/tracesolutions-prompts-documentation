@@ -1,3 +1,4 @@
+"use client";
 import {
   BookOpen,
   Bot,
@@ -6,7 +7,8 @@ import {
   Link as LinkIcon,
 } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import { usePathname } from "next/navigation";
+import React, { useEffect } from "react";
 
 interface navlinkProps {
   text: string;
@@ -14,14 +16,20 @@ interface navlinkProps {
 }
 
 const Navlink = ({ text, href }: navlinkProps) => {
+  const pathname = usePathname();
+
+  const isActive = pathname === href;
+
   const renderIcon = () => {
     switch (text) {
-      case "claude":
-        return <Cog color="#4b5563" />;
-      case "gpt":
-        return <BookOpen color="#4b5563" />;
-      case "agent":
-        return <Bot color="#4b5563" />;
+      case "Claude":
+        return <Cog color={"#4b5563"} className="group-hover:text-white" />;
+      case "GPT":
+        return (
+          <BookOpen color={"#4b5563"} className="group-hover:text-white" />
+        );
+      case "Agent":
+        return <Bot color={"#4b5563"} className="group-hover:text-white" />;
       default:
       // code block
     }
@@ -29,10 +37,18 @@ const Navlink = ({ text, href }: navlinkProps) => {
 
   return (
     <Link href={href}>
-      <div className="flex items-center gap-2 justify-between p-2 w-full  hover:bg-gray-100 rounded-lg transition-colors duration-100 ease-in-out">
+      <div
+        style={{ backgroundColor: isActive ? "#F2D1C9" : "rgba(0,0,0,0)" }}
+        className="flex group items-center gap-2 justify-between p-2 w-full  hover:bg-[#F2D1C9] rounded-lg transition-colors duration-300 ease-in-out"
+      >
         <div className="flex items-center gap-2">
           {renderIcon()}
-          <p className="text-gray-600 font-semibold text-md">{text}</p>
+          <p
+            style={{ color: "#4b5563" }}
+            className="font-semibold text-md group-hover:text-white "
+          >
+            {text}
+          </p>
         </div>
         <ChevronRight color="#4b5563" />
       </div>
