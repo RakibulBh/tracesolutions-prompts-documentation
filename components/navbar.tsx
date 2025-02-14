@@ -3,10 +3,16 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="h-16 border-b-2 border-b-gray-500 shadow-md bg-white p-4 items-center justify-between flex">
-      <div className="flex gap-2">
-        <Image alt="BTM-LOGO" src={"/btm_logo.jpg"} width={200} height={200} />
-        <p className="font-bold text-xl">Test Cases Prompt Docs</p>
+    <div className="h-20 border-b border-b-gray-100 bg-white p-4 items-center justify-between flex">
+      <div className="flex gap-4 items-center">
+        <Image
+          className="rounded-full"
+          alt="BTM-LOGO"
+          src="/btm_logo.jpeg"
+          width={40}
+          height={20}
+        />
+        <p className="font-bold text-lg">Test Cases Prompt Docs</p>
       </div>
     </div>
   );
