@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Sidebar = () => {
   return (
-    <div className="w-80 h-screen border-r-2 border-r-gray-200 p-2 bg-[#F3F8F2]">
+    <div className="w-80 border-r-2 border-r-gray-200 p-2 bg-[#F3F8F2]">
       {navlinks.map((navlink) => (
         <Navlink key={navlink.name} href={navlink.href} text={navlink.name} />
       ))}
