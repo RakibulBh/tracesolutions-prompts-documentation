@@ -9,11 +9,11 @@ export const navlinks: navlink[] = [
     name: "claude",
   },
   {
-    href: "openaigpt",
+    href: "gpt",
     name: "gpt",
   },
   {
-    href: "customagent",
+    href: "agent",
     name: "agent",
   },
 ];
