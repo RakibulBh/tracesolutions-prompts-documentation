@@ -14,8 +14,8 @@ const PromptBox = ({ text, title }: { text: string; title: string }) => {
   };
 
   return (
-    <div className="space-y-2">
-      <h2 className="font-semibold text-xl">{title}</h2>
+    <div id={title.toLowerCase().replaceAll(" ", "_")} className="space-y-2">
+      <h2 className="font-semibold text-xl">⚙️ {title}</h2>
       <div className="rounded-lg bg-[#E8F0E5] border border-[#B8C8B9] w-full relative p-4">
         <button
           onClick={copyToClipboard}
@@ -27,7 +27,7 @@ const PromptBox = ({ text, title }: { text: string; title: string }) => {
             <Copy color="#F3F8F2" size={15} />
           )}
         </button>
-        <p className="text-[#4A4E69] pr-20">{text}</p>
+        <p className="text-[#001f3f] pr-20 font-mono text-md">{text}</p>
       </div>
     </div>
   );

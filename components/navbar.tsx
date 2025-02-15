@@ -12,7 +12,10 @@ const Navbar = () => {
           width={40}
           height={20}
         />
-        <p className="font-bold text-lg">Test Cases Prompt Docs</p>
+        <p className="font-bold text-lg">
+          Test Cases Prompt Docs{" "}
+          <span className="text-sm text-gray-600">(For Trace Solutions)</span>
+        </p>
       </div>
     </div>
   );

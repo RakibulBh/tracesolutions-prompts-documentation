@@ -23,13 +23,11 @@ const Navlink = ({ text, href }: navlinkProps) => {
   const renderIcon = () => {
     switch (text) {
       case "Claude":
-        return <Cog color={"#4b5563"} className="group-hover:text-white" />;
+        return <Cog color="#001f3f" className="group-hover:text-white" />;
       case "GPT":
-        return (
-          <BookOpen color={"#4b5563"} className="group-hover:text-white" />
-        );
+        return <BookOpen color="#001f3f" className="group-hover:text-white" />;
       case "Agent":
-        return <Bot color={"#4b5563"} className="group-hover:text-white" />;
+        return <Bot color="#001f3f" className="group-hover:text-white" />;
       default:
       // code block
     }
@@ -38,13 +36,13 @@ const Navlink = ({ text, href }: navlinkProps) => {
   return (
     <Link href={href}>
       <div
-        style={{ backgroundColor: isActive ? "#F2D1C9" : "rgba(0,0,0,0)" }}
+        style={{ backgroundColor: isActive ? "#E9F2EC" : "rgba(0,0,0,0)" }}
         className="flex group items-center gap-2 justify-between p-2 w-full  hover:bg-[#F2D1C9] rounded-lg transition-colors duration-300 ease-in-out"
       >
         <div className="flex items-center gap-2">
           {renderIcon()}
           <p
-            style={{ color: "#4b5563" }}
+            style={{ color: "#001f3f" }}
             className="font-semibold text-md group-hover:text-white "
           >
             {text}

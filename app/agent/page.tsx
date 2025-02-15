@@ -1,5 +1,6 @@
 import PromptBox from "@/components/prompt-box";
-import { agentPrompts } from "@/data/prompts";
+import TableOfContents from "@/components/table-of-contents";
+import { agentPrompts } from "@/data/agent-prompts";
 import React from "react";
 
 const Page = () => {
@@ -11,6 +12,7 @@ const Page = () => {
         </h1>
         <p className="text-gray-500 text-lg">Built by Mikhail & Rakibul</p>
       </div>
+      <TableOfContents />
       <p className="text-4xl font-bold">Prompts</p>
       <div className="space-y-6">
         {Object.entries(agentPrompts).map(([key, promptData]) => (
