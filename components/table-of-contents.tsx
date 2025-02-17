@@ -9,7 +9,7 @@ const TableOfContents = () => {
       <ul className="ml-5 list-disc">
         {Object.entries(agentPrompts).map(([key, promptData]) => (
           <Link
-            className="hover:underline"
+            className="underline underline-offset-2"
             key={key}
             href={"#" + promptData.name.toLowerCase().replaceAll(" ", "_")}
           >

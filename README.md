@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trace Solutions AI Tools Documentation
 
-## Getting Started
+Welcome to the documentation for Trace Solutions AI Tools! This repository contains resources and guides for using our custom AI agents, including a customized GPT and the Claude project, designed specifically for generating test cases using artificial intelligence.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Our AI tools aim to streamline the process of generating test cases by leveraging advanced natural language processing techniques. Whether you're new to AI-driven testing or looking to enhance your current practices, this documentation will guide you through the setup, usage, and customization of our tools.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Custom GPT Model**: Tailored to assist in generating test cases based on specific prompts.
+- **Claude Project**: Provides additional functionalities and integrations for seamless AI-driven testing.
+- **Prompt Templates**: Pre-defined templates that can be easily customized for different testing scenarios.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configuration
 
-## Learn More
+Customize the prompt templates located in the `data/` directory to suit your specific requirements.
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Integrate the AI tools seamlessly into your projects to enhance your workflow.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Support
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For questions, issues, or feedback, please contact me at 2377940@brunel.ac.uk or open an issue on GitHub.
