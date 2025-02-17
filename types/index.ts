@@ -1,6 +1,8 @@
 export type Prompt = {
   name: string;
-  prompt: string;
+  prompts: {
+    prompt: string;
+  }[];
 };
 
 export type ProviderPrompts = {

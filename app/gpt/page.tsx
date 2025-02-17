@@ -1,4 +1,5 @@
 import PromptBox from "@/components/prompt-box";
+import renderPrompts from "@/components/renderPrompts";
 import TableOfContents from "@/components/table-of-contents";
 import { GPTPrompts } from "@/data/gpt-prompts";
 import React from "react";
@@ -14,15 +15,7 @@ const Page = () => {
       </div>
       <TableOfContents />
       <p className="text-4xl font-bold">Prompts</p>
-      <div className="space-y-6">
-        {Object.entries(GPTPrompts).map(([key, promptData]) => (
-          <PromptBox
-            key={key}
-            title={promptData.name}
-            text={promptData.prompt}
-          />
-        ))}
-      </div>
+      <div className="space-y-6">{renderPrompts(GPTPrompts)}</div>
     </div>
   );
 };
