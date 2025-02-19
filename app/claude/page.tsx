@@ -1,7 +1,8 @@
 import PromptBox from "@/components/prompt-box";
+import ToolInfoSection from "@/components/render-tool-info";
 import renderPrompts from "@/components/renderPrompts";
 import TableOfContents from "@/components/table-of-contents";
-import { claudePrompts } from "@/data/claude-prompts";
+import { claudeInfo, claudePrompts } from "@/data/claude-prompts";
 import React from "react";
 
 const Page = () => {
@@ -14,6 +15,7 @@ const Page = () => {
         <p className="text-gray-500 text-lg">Built by Johann</p>
       </div>
       <TableOfContents />
+      <ToolInfoSection data={claudeInfo} />
       <p className="text-4xl font-bold">Prompts</p>
       <div className="space-y-6">{renderPrompts(claudePrompts)}</div>
     </div>

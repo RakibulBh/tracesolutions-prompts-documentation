@@ -1,4 +1,5 @@
-import { ProviderPrompts } from "@/types";
+import { ProviderPrompts } from "@/types/prompts";
+import { ToolInfo } from "@/types/tool-info";
 
 export const claudePrompts: ProviderPrompts = {
   initial_prompts: {
@@ -105,4 +106,27 @@ export const claudePrompts: ProviderPrompts = {
       },
     ],
   },
+};
+
+export const claudeInfo: ToolInfo = {
+  documents: [
+    "Invoice Form document",
+    "Project Initialisation Prompt document",
+    "priority/test types document",
+    "table example document",
+    "detailed test case description example document",
+  ],
+  IO_sample: {
+    input:
+      "Follow the instructions and use your knowledge base to analyse and extract all the required test cases from requirements including edge cases and error handling. Start by listing all the requirements and then generate the HTML TEST CASE TABLE with all the extracted test cases including the coverage status modals. The priority, test type, and ISO category values should come from the knowledge base. An example of the HTML test case table format has been provided in test-1.html file.",
+    output: "Attached file for the test case table.",
+  },
+  tips: [
+    "Be very specific during the prompts.",
+    "Mentioning knowledge base is useful, so the LLM does not give extra explanations.",
+  ],
+  limits: [
+    "The number of test cases can vary but the LLM will generate more if you ask it to produce more test cases.",
+    "When it comes to evaluating test cases that were generated, the model will update its response and use more granular test cases for the requirements.",
+  ],
 };

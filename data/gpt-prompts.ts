@@ -1,4 +1,5 @@
-import { ProviderPrompts } from "@/types";
+import { ProviderPrompts } from "@/types/prompts";
+import { ToolInfo } from "@/types/tool-info";
 
 export const GPTPrompts: ProviderPrompts = {
   initial_prompts: {
@@ -72,4 +73,15 @@ export const GPTPrompts: ProviderPrompts = {
       },
     ],
   },
+};
+
+export const GPTInfo: ToolInfo = {
+  documents: ["Specification"],
+  tips: [
+    "if the model gives a response which is not exactly what you requested, respond with a message pointing out the error and model will immediately correct itself, no need to restart/regenerate the conversation.",
+  ],
+  limits: [
+    "currently the model is unable to perform requirements analysis or extraction due to lacking the required knowledge/documentation",
+    "it is important to double check the coverage reports produced by the model as these have a similar issue of lacking documentation that the model can use for training.",
+  ],
 };

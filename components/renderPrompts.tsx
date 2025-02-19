@@ -1,4 +1,4 @@
-import { ProviderPrompts } from "@/types";
+import { ProviderPrompts } from "@/types/prompts";
 import PromptBox from "./prompt-box";
 
 const renderPrompts = (data: ProviderPrompts) => {

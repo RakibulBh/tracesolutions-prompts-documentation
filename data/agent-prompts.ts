@@ -1,4 +1,5 @@
-import { ProviderPrompts } from "@/types";
+import { ProviderPrompts } from "@/types/prompts";
+import { ToolInfo } from "@/types/tool-info";
 
 export const agentPrompts: ProviderPrompts = {
   initial_prompts: {
@@ -76,4 +77,17 @@ Inside "testCase", include:
       },
     ],
   },
+};
+
+export const agentInfo: ToolInfo = {
+  documents: ["specificiations"],
+  prerequisites: [
+    "OpenAI API Key & Anthropic API Key Needed.",
+    "Python 3.12 code interpreter & executor",
+    "pip for simplified package dependency installation",
+  ],
+  limits: [
+    "inconsistent with its output, causing parsing issues on LangChain's end - specifically within `test_case_generation_tool`",
+    "The tool could also potentially utilize retrieval-augmented generation in the future",
+  ],
 };

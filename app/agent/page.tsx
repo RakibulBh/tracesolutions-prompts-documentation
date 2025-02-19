@@ -1,7 +1,8 @@
 import PromptBox from "@/components/prompt-box";
+import ToolInfoSection from "@/components/render-tool-info";
 import renderPrompts from "@/components/renderPrompts";
 import TableOfContents from "@/components/table-of-contents";
-import { agentPrompts } from "@/data/agent-prompts";
+import { agentInfo, agentPrompts } from "@/data/agent-prompts";
 import React from "react";
 
 const Page = () => {
@@ -14,6 +15,7 @@ const Page = () => {
         <p className="text-gray-500 text-lg">Built by Mikhail & Rakibul</p>
       </div>
       <TableOfContents />
+      <ToolInfoSection data={agentInfo} />
       <p className="text-4xl font-bold">Prompts</p>
       <div className="space-y-6">{renderPrompts(agentPrompts)}</div>
     </div>
