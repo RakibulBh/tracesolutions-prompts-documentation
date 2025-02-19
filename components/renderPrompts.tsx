@@ -10,11 +10,7 @@ const renderPrompts = (data: ProviderPrompts) => {
     >
       <h2 className="font-semibold text-xl">⚙️ {promptData.name}</h2>
       {promptData.prompts.map((prompt) => (
-        <PromptBox
-          key={prompt.prompt}
-          title={promptData.name}
-          text={prompt.prompt}
-        />
+        <PromptBox key={prompt.prompt} text={prompt.prompt} />
       ))}
     </div>
   ));
