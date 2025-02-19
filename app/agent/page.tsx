@@ -2,6 +2,7 @@ import ToolInfoSection from "@/components/render-tool-info";
 import renderPrompts from "@/components/renderPrompts";
 import TableOfContents from "@/components/table-of-contents";
 import { agentInfo, agentPrompts } from "@/data/agent-prompts";
+import { AlertTriangle } from "lucide-react";
 import React from "react";
 
 const Page = () => {
@@ -16,6 +17,14 @@ const Page = () => {
       <TableOfContents />
       <ToolInfoSection data={agentInfo} />
       <p className="text-4xl font-bold">Prompts</p>
+      <li className="flex items-center gap-3 bg-[#F3F8F2] border border-[#B8C8B9] rounded-lg p-3">
+        <AlertTriangle className="w-10 h-10" />
+        <p className="text-[#001f3f] font-semibold">
+          These prompts do not need to be used by the model. They are already
+          pre defined within the agent, please just refer to which tool you want
+          to use in the prompt box.
+        </p>
+      </li>
       <div className="space-y-6">{renderPrompts(agentPrompts)}</div>
     </div>
   );
