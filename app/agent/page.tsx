@@ -20,9 +20,8 @@ const Page = () => {
       <li className="flex items-center gap-3 bg-[#F3F8F2] border border-[#B8C8B9] rounded-lg p-3">
         <AlertTriangle className="w-10 h-10" />
         <p className="text-[#001f3f] font-semibold">
-          These prompts do not need to be used by the model. They are already
-          pre defined within the agent, please just refer to which tool you want
-          to use in the prompt box.
+          Generic prompting is supported. The prompts do not exactly have to
+          match the following prompt templates.
         </p>
       </li>
       <div className="space-y-6">{renderPrompts(agentPrompts)}</div>
