@@ -1,4 +1,3 @@
-import PromptBox from "@/components/prompt-box";
 import ToolInfoSection from "@/components/render-tool-info";
 import renderPrompts from "@/components/renderPrompts";
 import TableOfContents from "@/components/table-of-contents";

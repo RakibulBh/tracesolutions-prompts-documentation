@@ -1,14 +1,8 @@
 "use client";
-import {
-  BookOpen,
-  Bot,
-  ChevronRight,
-  Cog,
-  Link as LinkIcon,
-} from "lucide-react";
+import { BookOpen, Bot, ChevronRight, Cog } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect } from "react";
+import React from "react";
 
 interface navlinkProps {
   text: string;

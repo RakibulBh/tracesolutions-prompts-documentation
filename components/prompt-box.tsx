@@ -2,7 +2,7 @@
 import { Check, Copy } from "lucide-react";
 import React, { useState } from "react";
 
-const PromptBox = ({ text, title }: { text: string; title: string }) => {
+const PromptBox = ({ text }: { text: string }) => {
   const [copied, setCopied] = useState<boolean>(false);
 
   const copyToClipboard = () => {

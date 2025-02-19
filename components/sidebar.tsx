@@ -1,7 +1,6 @@
 import { navlinks } from "@/constants/navlinks";
 import React from "react";
 import Navlink from "./navlink";
-import Link from "next/link";
 
 const Sidebar = () => {
   return (
