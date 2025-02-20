@@ -16,10 +16,31 @@ Our AI tools aim to streamline the process of generating test cases by leveragin
 
 Customize the prompt templates located in the `data/` directory to suit your specific requirements.
 
-## Usage
-
-Integrate the AI tools seamlessly into your projects to enhance your workflow.
-
 ## Support
 
 For questions, issues, or feedback, please contact me at 2377940@brunel.ac.uk or open an issue on GitHub.
+
+## Installation
+
+1. **Clone the Repository (if you haven't already)**
+
+```bash
+git clone https://github.com/RakibulBh/tracesolutions-prompts-documentation.git
+cd trace-solutions-ai-tools
+```
+
+2. **Install Dependencies:**
+
+Navigate to the project directory and install the required dependencies using npm:
+
+```bash
+npm install
+```
+
+## Running the project
+
+Once the dependencies are installed, you can start the development server:
+
+```
+npm run dev
+```
