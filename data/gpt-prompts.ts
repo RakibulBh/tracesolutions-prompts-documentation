@@ -77,6 +77,9 @@ export const GPTPrompts: ProviderPrompts = {
 
 export const GPTInfo: ToolInfo = {
   documents: ["Specification"],
+  setup_steps: [
+    "Head to https://chatgpt.com/g/g-67a5139a09cc819180fa6db4e9890502-test-case-generator",
+  ],
   tips: [
     "if the model gives a response which is not exactly what you requested, respond with a message pointing out the error and model will immediately correct itself, no need to restart/regenerate the conversation.",
   ],

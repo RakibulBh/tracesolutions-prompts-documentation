@@ -63,6 +63,7 @@ export const agentPrompts: ProviderPrompts = {
 
 export const agentInfo: ToolInfo = {
   documents: ["specificiations"],
+  setup_steps: ["Just started chatting with the agent! (No URL yet)."],
   prerequisites: [
     "OpenAI API Key & Anthropic API Key Needed.",
     "Python 3.12 code interpreter & executor",

@@ -1,3 +1,4 @@
+import { makeLinksClickable } from "@/app/utils/detectLink";
 import { ToolInfo } from "@/types/tool-info";
 import {
   FileText,
@@ -67,7 +68,10 @@ function ToolInfoSection({ data }: { data: ToolInfo }) {
                 <div className="w-6 h-6 flex items-center justify-center bg-[#A7C4BC] text-white rounded-full font-semibold">
                   {index + 1}
                 </div>
-                <p className="text-[#001f3f]">{step}</p>
+                <p
+                  className="text-[#001f3f]"
+                  dangerouslySetInnerHTML={{ __html: makeLinksClickable(step) }}
+                />
               </li>
             ))}
           </ol>

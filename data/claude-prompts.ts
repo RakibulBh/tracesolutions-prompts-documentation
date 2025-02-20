@@ -116,6 +116,12 @@ export const claudeInfo: ToolInfo = {
     "table example document",
     "detailed test case description example document",
   ],
+  setup_steps: [
+    "Head to https://claude.ai/projects",
+    'Click on "Create Project"',
+    "Upload the relevant documents listed above.",
+    "Begin chatting!",
+  ],
   IO_sample: {
     input:
       "Follow the instructions and use your knowledge base to analyse and extract all the required test cases from requirements including edge cases and error handling. Start by listing all the requirements and then generate the HTML TEST CASE TABLE with all the extracted test cases including the coverage status modals. The priority, test type, and ISO category values should come from the knowledge base. An example of the HTML test case table format has been provided in test-1.html file.",
