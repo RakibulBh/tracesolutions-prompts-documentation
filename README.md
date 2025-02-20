@@ -20,7 +20,7 @@ Customize the prompt templates located in the `data/` directory to suit your spe
 
 For questions, issues, or feedback, please contact me at 2377940@brunel.ac.uk or open an issue on GitHub.
 
-## Installation
+## Installation
 
 1. **Clone the Repository (if you haven't already)**
 
