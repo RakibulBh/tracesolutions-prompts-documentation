@@ -62,7 +62,7 @@ export const agentPrompts: ProviderPrompts = {
 };
 
 export const agentInfo: ToolInfo = {
-  documents: ["specificiations"],
+  documents: ["Specification"],
   setup_steps: ["Just started chatting with the agent! (No URL yet)."],
   prerequisites: [
     "OpenAI API Key & Anthropic API Key Needed.",
