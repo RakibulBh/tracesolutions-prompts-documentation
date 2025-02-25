@@ -2,6 +2,16 @@ import { ProviderPrompts } from "@/types/prompts";
 import { ToolInfo } from "@/types/tool-info";
 
 export const agentPrompts: ProviderPrompts = {
+  generate_test_cases: {
+    name: "Generate Test Cases",
+    prompts: [
+      {
+        prompt:
+          "Please generate a set of comprehensive test cases based on the provided specification. Cover all features, edge cases, and error handling scenarios. Make sure each test is uniquely identifiable and references the requirement in the spec.",
+      },
+    ],
+  },
+  
   details_description: {
     name: "Generate Details Descriptions",
     prompts: [
@@ -16,16 +26,6 @@ export const agentPrompts: ProviderPrompts = {
       {
         prompt:
           "Could you please elaborate on your choice of the ISO25010 classification for TC-002?",
-      },
-    ],
-  },
-
-  generate_test_cases: {
-    name: "Generate Test Cases",
-    prompts: [
-      {
-        prompt:
-          "Please generate a set of comprehensive test cases based on the provided specification. Cover all features, edge cases, and error handling scenarios. Make sure each test is uniquely identifiable and references the requirement in the spec.",
       },
     ],
   },
