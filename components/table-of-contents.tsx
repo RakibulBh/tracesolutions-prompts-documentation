@@ -1,4 +1,4 @@
-import { agentPrompts } from "@/data/agent-prompts";
+import { claudePrompts } from "@/data/claude-prompts";
 import Link from "next/link";
 import React from "react";
 
@@ -7,7 +7,7 @@ const TableOfContents = () => {
     <div className="space-y-4">
       <p className="text-lg font-semibold">Table of Contents:</p>
       <ul className="ml-5 list-disc">
-        {Object.entries(agentPrompts).map(([key, promptData]) => (
+        {Object.entries(claudePrompts).map(([key, promptData]) => (
           <Link
             className="underline underline-offset-2"
             key={key}
