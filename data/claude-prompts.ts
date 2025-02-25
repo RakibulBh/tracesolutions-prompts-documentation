@@ -10,16 +10,6 @@ export const claudePrompts: ProviderPrompts = {
       },
     ],
   },
-
-  details_description: {
-    name: "Generate Details Descriptions",
-    prompts: [
-      {
-        prompt: `Generate detailed test case description for TC-XXX.`,
-      },
-    ],
-  },
-
   generate_test_cases: {
     name: "Generate Test Cases",
     prompts: [
@@ -32,6 +22,16 @@ export const claudePrompts: ProviderPrompts = {
     ],
   },
 
+   details_description: {
+    name: "Generate Details Descriptions",
+    prompts: [
+      {
+        prompt: `Generate detailed test case description for TC-XXX.`,
+      },
+    ],
+  },
+
+  
   explain_test_properties: {
     name: "Explain Test Properties",
     prompts: [
