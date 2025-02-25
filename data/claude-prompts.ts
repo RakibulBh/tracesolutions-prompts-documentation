@@ -74,7 +74,7 @@ export const claudeInfo: ToolInfo = {
     "Specification", // No need for path as it is dynamic
     {
       name: "Project Initialization Prompt document",
-      path: "/docs/ProjectInitialPrompt.pdf",
+      path: "/docs/ProjectInitialPrompt.docx",
     },
     {
       name: "Priority test types document",
@@ -111,7 +111,7 @@ export const claudeInfo: ToolInfo = {
   ],
   troubleshooting: [
     "If the maximum number of tokens is reached, type Continue so the LLM completes the response.",
-    "If you think the number of extracted test cases is low, then use the prompt **Generate more test case**.",
+    "If you think the number of extracted test cases is low, then use the prompt **Generate more test cases**.",
     "In the rare case that the modals do not work when generating the HTML test case table, then use the prompt **Update the table so the coverage modals work** to correct the coverage modals.",
     "In the rare case that the coverage report is in markdown format, then use the prompt **Generate the coverage report in HTML format** to output the response in the correct format."
   ]
