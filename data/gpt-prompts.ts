@@ -10,7 +10,15 @@ export const GPTPrompts: ProviderPrompts = {
       },
     ],
   },
-
+  generate_test_cases: {
+    name: "Generate Test Cases",
+    prompts: [
+      {
+        prompt: `Generate a comprehensive test case table based on the provided specification. Ensure that all functional, negative, edge, and integration scenarios are covered. Use ISO 25010 categories, appropriate test types, and priority levels. Follow the exact format from Test-Case-Table.html.`,
+      },
+    ],
+  },
+  
   details_description: {
     name: "Generate Details Descriptions",
     prompts: [
@@ -19,15 +27,6 @@ export const GPTPrompts: ProviderPrompts = {
       },
       {
         prompt: `Generate a detailed test case description for test case TC-001, including test data, browser compatibility, and expected vs. actual results.`,
-      },
-    ],
-  },
-
-  generate_test_cases: {
-    name: "Generate Test Cases",
-    prompts: [
-      {
-        prompt: `Generate a comprehensive test case table based on the provided specification. Ensure that all functional, negative, edge, and integration scenarios are covered. Use ISO 25010 categories, appropriate test types, and priority levels. Follow the exact format from Test-Case-Table.html.`,
       },
     ],
   },
