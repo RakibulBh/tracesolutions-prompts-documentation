@@ -74,7 +74,7 @@ export const claudeInfo: ToolInfo = {
     "Specification", // No need for path as it is dynamic
     {
       name: "Project Initialization Prompt document",
-      path: "/docs/ProjectInitialPrompt.pdf",
+      path: "/docs/ProjectInitialPrompt.docx",
     },
     {
       name: "Priority test types document",
