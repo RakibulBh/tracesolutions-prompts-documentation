@@ -1,5 +1,12 @@
+export type DocumentInfo = {
+  name: string;
+  path: string;
+};
+
+export type DocumentItem = DocumentInfo | string;
+
 export type ToolInfo = {
-  documents?: string[];
+  documents?: DocumentItem[];
   setup_steps?: string[];
   prerequisites?: string[];
   IO_sample?: {
@@ -8,4 +15,5 @@ export type ToolInfo = {
   };
   tips?: string[];
   limits?: string[];
+  troubleshooting?: string[];
 };

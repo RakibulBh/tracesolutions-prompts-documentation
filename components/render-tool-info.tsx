@@ -6,6 +6,7 @@ import {
   Settings,
   Lightbulb,
   AlertTriangle,
+  BadgeAlert,
 } from "lucide-react"; // Icons for visual distinction
 
 function ToolInfoSection({ data }: { data: ToolInfo }) {
@@ -18,18 +19,42 @@ function ToolInfoSection({ data }: { data: ToolInfo }) {
             <FileText className="w-5 h-5" /> Documents Required
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {data.documents.map((document) => (
-              <div
-                key={document}
-                className="bg-white border border-[#B8C8B9] rounded-lg p-4 flex flex-col items-center text-center hover:shadow-md transition-shadow"
-              >
-                <FileText className="w-8 h-8 text-[#A7C4BC]" />
-                <p className="mt-2 text-[#001f3f] font-medium">{document}</p>
-              </div>
-            ))}
+            {data.documents.map((doc, index) => {
+              // If doc is a string, simply display it as text.
+              if (typeof doc === "string") {
+                return (
+                  <div
+                    key={index}
+                    className="bg-white border border-[#B8C8B9] rounded-lg p-4 flex flex-col items-center text-center hover:shadow-md transition-shadow"
+                  >
+                    <FileText className="w-8 h-8 text-[#A7C4BC]" />
+                    <p className="mt-2 text-[#001f3f] font-medium">{doc}</p>
+                  </div>
+                );
+              }
+
+              // If doc is an object, show the name and provide a download link.
+              return (
+                <div
+                  key={doc.name}
+                  className="bg-white border border-[#B8C8B9] rounded-lg p-4 flex flex-col items-center text-center hover:shadow-md transition-shadow"
+                >
+                  <FileText className="w-8 h-8 text-[#A7C4BC]" />
+                  <p className="mt-2 text-[#001f3f] font-medium">{doc.name}</p>
+                  <a
+                    href={doc.path}
+                    download
+                    className="mt-2 text-blue-600 hover:underline"
+                  >
+                    Download
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
+
 
       {/* Prerequisites Section */}
       {data.prerequisites && (
@@ -135,6 +160,28 @@ function ToolInfoSection({ data }: { data: ToolInfo }) {
                   {index + 1}
                 </div>
                 <p className="text-[#001f3f]">{limitation}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+
+      {/* Troubleshooting Section */}
+      {data.troubleshooting && (
+        <div className="space-y-4">
+          <h1 className="font-semibold text-xl text-[#001f3f] flex items-center gap-2">
+            <BadgeAlert className="w-5 h-5" /> Troubleshooting
+          </h1>
+          <ol className="space-y-3">
+            {data.troubleshooting.map((troubleshooting, index) => (
+              <li
+                key={troubleshooting}
+                className="flex items-start gap-3 bg-[#F3F8F2] border border-[#B8C8B9] rounded-lg p-3"
+              >
+                <div className="w-6 h-6 flex items-center justify-center bg-[#A7C4BC] text-white rounded-full font-semibold">
+                  {index + 1}
+                </div>
+                <p className="text-[#001f3f]">{troubleshooting}</p>
               </li>
             ))}
           </ol>
