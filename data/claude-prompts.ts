@@ -50,11 +50,10 @@ export const claudePrompts: ProviderPrompts = {
     name: "Generate Requirements",
     prompts: [
       {
-        prompt: `Extract and define all testable requirements from the generated HTML test case table. 
-        
-                Ensure all identified requirements are clear, measurable, and well-structured.
-        
-                Use the test-case-table.html file as a reference for formatting.`,
+        prompt: `Generate a requirements table based on the provided specification document. 
+        Follow the exact format shown in REQUIREMENTS_TABLE.html in your project knowledge. 
+        Only include requirements explicitly stated in the document with their exact text quotes. 
+        Do not invent or extrapolate requirements.`,
       },
     ],
   },
@@ -63,7 +62,9 @@ export const claudePrompts: ProviderPrompts = {
     name: "Generate Coverage Report",
     prompts: [
       {
-        prompt: `Using only the information from the generated HTML test case table and your internal knowledge base, generate an HTML file that serves as a test case coverage report. The report must include a detailed, step-by-step explanation of how each element is derived directly from the test cases. Do not include any additional opinions or extraneous information beyond what is present in the HTML table and your knowledge base. Ensure the HTML output is comprehensive, well-structured, and valid.`,
+        prompt: `Use the requirements table to check if all the requirements are covered and show Requirements-to-Test Case Traceability Matrix. 
+        To be covered both the requirement and the test case should be traced to the same text in the specification document use coverage-report.html in your project knowledge as a template. 
+        Do not include any additional opinions or extraneous information beyond what is present in the HTML table and your knowledge base.`,
       },
     ],
   },
