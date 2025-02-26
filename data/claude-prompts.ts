@@ -100,7 +100,7 @@ export const claudeInfo: ToolInfo = {
       path: "/docs/priority_iso_categories_test_types.docx",
     },
     {
-      name: "Detailed test case documentation Promp document",
+      name: "Detailed test case documentation Prompt document",
       path: "/docs/Detailed test case documentation.docx",
     },
     {
