@@ -108,19 +108,19 @@ export const claudeInfo: ToolInfo = {
       path: "/docs/test-case-table.html",
     },
     {name: "Detailed description example document", 
-     path: "/docs/tc-001-details.html"
+     path: "/docs/tc-001-details.html",
     },
     {name: "Requirements table template", 
-     path: "/docs/requirements-table.html"
+     path: "/docs/requirements-table.html",
     },
     {name: "Coverage report template", 
-     path: "/docs/coverage-report.html"
+     path: "/docs/coverage-report.html",
     },
     {name: "Traceability matrix template", 
-     path: "/docs/simple-traceability-matrix.html"
+     path: "/docs/simple-traceability-matrix.html",
     },
     {name: "Gap analysis template", 
-     path: "/docs/gap-analysis.html"
+     path: "/docs/gap-analysis.html",
     },
   ],
   setup_steps: [
