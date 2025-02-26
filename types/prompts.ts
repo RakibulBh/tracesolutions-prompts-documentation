@@ -13,7 +13,7 @@ export type ProviderPrompts = {
   explain_test_properties?: Prompt;
   generate_requirements?: Prompt;
   generate_coverage_report: Prompt;
-  traceability_analysis?:Prompt;
-  generate_coverage_report?:Prompt;
+  traceability_analysis?: Prompt;
+  generate_gap_analysis?: Prompt;
   validate?: Prompt;
 };
