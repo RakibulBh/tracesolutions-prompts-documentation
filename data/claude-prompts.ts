@@ -89,6 +89,10 @@ export const claudeInfo: ToolInfo = {
       path: "/docs/test-case-table.html",
     },
     {name: "Detailed description example document", path: "/docs/tc-001-details.html"},
+    {name: "Requirements table example document", path: "/docs/requirements-table.html"},
+    {name: "Gap analysis example document", path: "/docs/gap-analysis.html"},
+    {name: "Coverage Report example document", path: "/docs/coverage-report.html"},
+    {name: "Traceability Matrix example document", path: "/docs/simple-traceability-matrix.html"},
   ],
   setup_steps: [
     "Head to https://claude.ai/projects",
@@ -112,6 +116,7 @@ export const claudeInfo: ToolInfo = {
   troubleshooting: [
     "If the maximum number of tokens is reached, type Continue so the LLM completes the response.",
     "If you think the number of extracted test cases is low, then use the prompt **Generate more test cases**.",
+    "In the rare case that the LLM returns the detailed test case description in text format, then use the prompt **Generate HTML file**.",
     "In the rare case that the modals do not work when generating the HTML test case table, then use the prompt **Update the table so the coverage modals work** to correct the coverage modals.",
     "In the rare case that the coverage report is in markdown format, then use the prompt **Generate the coverage report in HTML format** to output the response in the correct format."
   ]
