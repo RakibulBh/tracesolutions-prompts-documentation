@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP-9988 Requirements Table with Source Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .table-container {
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f4f4f4;
+            position: sticky;
+            top: 0;
+        }
+        .req-id {
+            font-weight: bold;
+            width: 80px;
+        }
+        .req-type {
+            width: 100px;
+        }
+        .source-text {
+            background-color: #f8f9fa;
+            padding: 8px;
+            border-left: 3px solid #007bff;
+            margin: 5px 0;
+            font-family: "Courier New", monospace;
+        }
+        h1 {
+            color: #333;
+        }
+        .req-source {
+            width: 130px;
+        }
+    </style>
+</head>
+<body>
+    <h1>MP-9988 Requirements Table with Source Text</h1>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="req-id">Req ID</th>
+                    <th class="req-type">Type</th>
+                    <th>Description</th>
+                    <th class="req-source">Source</th>
+                    <th>Exact Text from Specification</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="req-id">REQ-001</td>
+                    <td class="req-type">Functional</td>
+                    <td>A Creditor Invoice form must be created when a supplier submits an invoice via MFS</td>
+                    <td class="req-source">Main Acceptance Criteria</td>
+                    <td>
+                        <div class="source-text">
+                            "GIVEN a Supplier has submitted an invoice via MFS
+                            WHEN the form is submitted
+                            THEN a Creditor Invoice form is created"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-002</td>
+                    <td class="req-type">Functional</td>
+                    <td>The Creditor Invoice form must appear in the My Activities list</td>
+                    <td class="req-source">Expected Outcome</td>
+                    <td>
+                        <div class="source-text">
+                            "Form appears in My Activities list"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-003</td>
+                    <td class="req-type">Functional</td>
+                    <td>The form must be associated with the correct supplier and contract</td>
+                    <td class="req-source">Expected Outcome</td>
+                    <td>
+                        <div class="source-text">
+                            "Form is associated with correct supplier and contract"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-004</td>
+                    <td class="req-type">Technical</td>
+                    <td>The system must have Mojo v6.90.10 or higher installed</td>
+                    <td class="req-source">Prerequisites</td>
+                    <td>
+                        <div class="source-text">
+                            "Mojo v6.90.10 or higher installed"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-005</td>
+                    <td class="req-type">Technical</td>
+                    <td>MFS (Mojo for Suppliers) must be enabled and configured</td>
+                    <td class="req-source">Prerequisites</td>
+                    <td>
+                        <div class="source-text">
+                            "MFS (Mojo for Suppliers) enabled and configured"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-006</td>
+                    <td class="req-type">Security</td>
+                    <td>Supplier must have a valid account with MFS access</td>
+                    <td class="req-source">Prerequisites</td>
+                    <td>
+                        <div class="source-text">
+                            "Valid supplier account with MFS access"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-007</td>
+                    <td class="req-type">Security</td>
+                    <td>User must have appropriate security group access</td>
+                    <td class="req-source">Prerequisites</td>
+                    <td>
+                        <div class="source-text">
+                            "Test user with appropriate security group access"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-008</td>
+                    <td class="req-type">Technical</td>
+                    <td>Works Contract must be configured in the system</td>
+                    <td class="req-source">Prerequisites</td>
+                    <td>
+                        <div class="source-text">
+                            "Works Contract configured in the system"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-009</td>
+                    <td class="req-type">Compatibility</td>
+                    <td>The system must support Chrome v120.0.6099.129</td>
+                    <td class="req-source">Browser / Device</td>
+                    <td>
+                        <div class="source-text">
+                            "Chrome v120.0.6099.129"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-010</td>
+                    <td class="req-type">Compatibility</td>
+                    <td>The system must support Edge v120.0.2210.91</td>
+                    <td class="req-source">Browser / Device</td>
+                    <td>
+                        <div class="source-text">
+                            "Edge v120.0.2210.91"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-011</td>
+                    <td class="req-type">Compatibility</td>
+                    <td>The system must support Firefox v121.0</td>
+                    <td class="req-source">Browser / Device</td>
+                    <td>
+                        <div class="source-text">
+                            "Firefox v121.0"
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

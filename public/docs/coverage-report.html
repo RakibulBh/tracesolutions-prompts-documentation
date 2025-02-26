@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requirements-to-Test Case Traceability Matrix</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .table-container {
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f4f4f4;
+            position: sticky;
+            top: 0;
+        }
+        .source-text {
+            background-color: #f8f9fa;
+            padding: 8px;
+            border-left: 3px solid #007bff;
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        .coverage-good {
+            background-color: #e6ffe6;
+            color: #006600;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .coverage-partial {
+            background-color: #fff8e6;
+            color: #cc7700;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .coverage-gap {
+            background-color: #ffe6e6;
+            color: #cc0000;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .req-id {
+            font-weight: bold;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .summary-container {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .test-case-badge {
+            display: inline-block;
+            background-color: #e6f2ff;
+            color: #0066cc;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Requirements-to-Test Case Traceability Matrix</h1>
+    
+    <div class="summary-container">
+        <h3>Coverage Summary</h3>
+        <ul>
+            <li><span class="coverage-good">Fully Covered: 7</span> - Requirements that are fully addressed by test cases with direct traceability</li>
+            <li><span class="coverage-partial">Partially Covered: 2</span> - Requirements with some test coverage but potential gaps</li>
+            <li><span class="coverage-gap">Not Covered: 2</span> - Requirements without adequate test coverage</li>
+            <li>Total Requirements: 11</li>
+        </ul>
+    </div>
+    
+    <h2>Detailed Traceability Analysis</h2>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Req ID</th>
+                    <th>Requirement Description</th>
+                    <th>Source Text</th>
+                    <th>Test Cases</th>
+                    <th>Coverage Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="req-id">REQ-001</td>
+                    <td>A Creditor Invoice form must be created when a supplier submits an invoice via MFS</td>
+                    <td>
+                        <div class="source-text">
+                            "GIVEN a Supplier has submitted an invoice via MFS
+                            WHEN the form is submitted
+                            THEN a Creditor Invoice form is created"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-001</span> Basic form creation from MFS submission
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-002</td>
+                    <td>The Creditor Invoice form must appear in the My Activities list</td>
+                    <td>
+                        <div class="source-text">
+                            "Form appears in My Activities list"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-011</span> Form appears in My Activities list
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-003</td>
+                    <td>The form must be associated with the correct supplier and contract</td>
+                    <td>
+                        <div class="source-text">
+                            "Form is associated with correct supplier and contract"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-005</span> Form association with supplier account
+                        <br>
+                        <span class="test-case-badge">TC-006</span> Form association with contract
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-004</td>
+                    <td>The system must have Mojo v6.90.10 or higher installed</td>
+                    <td>
+                        <div class="source-text">
+                            "Mojo v6.90.10 or higher installed"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">N/A</span> This is a prerequisite rather than testable functionality
+                    </td>
+                    <td><span class="coverage-partial">Partially Covered</span> - Implicitly verified in all test cases but not explicitly tested</td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-005</td>
+                    <td>MFS (Mojo for Suppliers) must be enabled and configured</td>
+                    <td>
+                        <div class="source-text">
+                            "MFS (Mojo for Suppliers) enabled and configured"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">N/A</span> This is a prerequisite rather than testable functionality
+                    </td>
+                    <td><span class="coverage-partial">Partially Covered</span> - Implicitly verified in all test cases but not explicitly tested</td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-006</td>
+                    <td>Supplier must have a valid account with MFS access</td>
+                    <td>
+                        <div class="source-text">
+                            "Valid supplier account with MFS access"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-010</span> Supplier account validation before form creation
+                    </td>
+                    <td><span class="coverage-gap">Not Covered</span> - While TC-010 addresses this requirement, it's marked as "Not Covered" in the test case table</td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-007</td>
+                    <td>User must have appropriate security group access</td>
+                    <td>
+                        <div class="source-text">
+                            "Test user with appropriate security group access"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">N/A</span> No specific test case addresses security group validation
+                    </td>
+                    <td><span class="coverage-gap">Not Covered</span> - Security access requirements should be explicitly tested</td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-008</td>
+                    <td>Works Contract must be configured in the system</td>
+                    <td>
+                        <div class="source-text">
+                            "Works Contract configured in the system"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-006</span> Form association with contract
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-009</td>
+                    <td>The system must support Chrome v120.0.6099.129</td>
+                    <td>
+                        <div class="source-text">
+                            "Chrome v120.0.6099.129"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-012</span> Form creation in supported browsers
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-010</td>
+                    <td>The system must support Edge v120.0.2210.91</td>
+                    <td>
+                        <div class="source-text">
+                            "Edge v120.0.2210.91"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-012</span> Form creation in supported browsers
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-011</td>
+                    <td>The system must support Firefox v121.0</td>
+                    <td>
+                        <div class="source-text">
+                            "Firefox v121.0"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-012</span> Form creation in supported browsers
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <h2>Test Case Coverage Analysis</h2>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Test Case ID</th>
+                    <th>Description</th>
+                    <th>Requirements Covered</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>TC-001</td>
+                    <td>Basic form creation from MFS submission</td>
+                    <td>REQ-001</td>
+                    <td><span class="coverage-good">Valid</span></td>
+                </tr>
+                <tr>
+                    <td>TC-002</td>
+                    <td>Form created in pending state</td>
+                    <td>N/A - Addresses functionality not explicitly in requirements table</td>
+                    <td><span class="coverage-partial">Enhanced</span> - Extends beyond basic requirements</td>
+                </tr>
+                <tr>
+                    <td>TC-003</td>
+                    <td>Invoice data correctly transferred to form</td>
+                    <td>N/A - Addresses functionality not explicitly in requirements table</td>
+                    <td><span class="coverage-partial">Enhanced</span> - Extends beyond basic requirements</td>
+                </tr>
+                <tr>
+                    <td>TC-004</td>
+                    <td>Handling of missing invoice data</td>
+                    <td>N/A - Addresses functionality not explicitly in requirements table</td>
+                    <td><span class="coverage-partial">Enhanced</span> - Extends beyond basic requirements</td>
+                </tr>
+                <tr>
+                    <td>TC-005</td>
+                    <td>Form association with supplier account</td>
+                    <td>REQ-003</td>
+                    <td><span class="coverage-good">Valid</span></td>
+                </tr>
+                <tr>
+                    <td>TC-006</td>
+                    <td>Form association with contract</td>
+                    <td>REQ-003, REQ-008</td>
+                    <td><span class="coverage-good">Valid</span></td>
+                </tr>
+                <tr>
+                    <td>TC-007</td>
+                    <td>Administrator notification of new form</td>
+                    <td>N/A - Addresses functionality not explicitly in requirements table</td>
+                    <td><span class="coverage-partial">Enhanced</span> - Extends beyond basic requirements</td>
+                </tr>
+                <tr>
+                    <td>TC-008</td>
+                    <td>Form creation response time</td>
+                    <td>N/A - Addresses functionality not explicitly in requirements table</td>
+                    <td><span class="coverage-partial">Enhanced</span> - Extends beyond basic requirements</td>
+                </tr>
+                <tr>
+                    <td>TC-009</td>
+                    <td>Handling duplicate invoice submission</td>
+                    <td>N/A - Addresses functionality not explicitly in requirements table</td>
+                    <td><span class="coverage-partial">Enhanced</span> - Extends beyond basic requirements</td>
+                </tr>
+                <tr>
+                    <td>TC-010</td>
+                    <td>Supplier account validation before form creation</td>
+                    <td>REQ-006</td>
+                    <td><span class="coverage-gap">Not Implemented</span> - Test case needed but not covered</td>
+                </tr>
+                <tr>
+                    <td>TC-011</td>
+                    <td>Form appears in My Activities list</td>
+                    <td>REQ-002</td>
+                    <td><span class="coverage-good">Valid</span></td>
+                </tr>
+                <tr>
+                    <td>TC-012</td>
+                    <td>Form creation in supported browsers</td>
+                    <td>REQ-009, REQ-010, REQ-011</td>
+                    <td><span class="coverage-good">Valid</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <h2>Coverage Gaps and Recommendations</h2>
+    
+    <div class="summary-container">
+        <h3>Identified Gaps</h3>
+        <ol>
+            <li>REQ-006 (Supplier must have a valid account with MFS access) is not adequately covered. Although TC-010 exists, it's marked as "Not Covered" in the test case table.</li>
+            <li>REQ-007 (User must have appropriate security group access) has no specific test case addressing security validation.</li>
+            <li>Several test cases (TC-002, TC-003, TC-004, TC-007, TC-008, TC-009) address functionality that's not explicitly listed in the requirements table but may be implicitly needed.</li>
+        </ol>
+        
+        <h3>Recommendations</h3>
+        <ol>
+            <li>Implement TC-010 to validate supplier account authentication and access control to address REQ-006.</li>
+            <li>Create a new test case specifically for security group validation to address REQ-007.</li>
+            <li>Consider updating the requirements table to explicitly include form pending state, data validation, error handling, performance, and notification requirements that are being tested.</li>
+            <li>Review prerequisite requirements (REQ-004, REQ-005) to determine if they should be explicitly tested or remain as preconditions only.</li>
+            <li>Add test cases for edge cases and error conditions that might not be explicitly mentioned in requirements but are important for system robustness.</li>
+        </ol>
+    </div>
+</body>
+</html>
