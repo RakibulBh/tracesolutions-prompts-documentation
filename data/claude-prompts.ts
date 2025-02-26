@@ -68,6 +68,24 @@ export const claudePrompts: ProviderPrompts = {
       },
     ],
   },
+ generate_traceability_matrix: {
+    name: "Generate Traceability Matrix",
+    prompts: [
+      {
+        prompt: `Give me only the Requirement-to-Test Case Traceability Matrix. Use SIMPLE_TRACEABILITY_MATRIX.html as a template. `,
+      },
+    ],
+  },
+
+  generate_gap_analysis: {
+    name: "Generate Gap Analysis",
+    prompts: [
+      {
+        prompt: `Perform a gap analysis to identify any high priority test cases that are potentially not covered. 
+        Use the gap-analysis.html from the project knowledge as an example. `,
+      },
+    ],
+  },
 };
 
 export const claudeInfo: ToolInfo = {
