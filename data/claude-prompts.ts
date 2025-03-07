@@ -26,7 +26,7 @@ export const claudePrompts: ProviderPrompts = {
     name: "Generate Details Descriptions",
     prompts: [
       {
-        prompt: `Generate detailed test case description for TC-XXX.`,
+        prompt: `Generate detailed test case description for TC-XXX using the structure in tc-001-details.html.`,
       },
     ],
   },
