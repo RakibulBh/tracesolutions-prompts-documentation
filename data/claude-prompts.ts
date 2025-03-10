@@ -96,7 +96,7 @@ export const claudeInfo: ToolInfo = {
       path: "/docs/ProjectInitialPrompt.docx",
     },
     {
-      name: "Priority test types document",
+      name: "Priority ISO categories document",
       path: "/docs/priority_iso_categories_test_types.docx",
     },
     {
