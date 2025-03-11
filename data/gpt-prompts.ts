@@ -14,7 +14,7 @@ export const GPTPrompts: ProviderPrompts = {
     name: "Generate Test Cases",
     prompts: [
       {
-        prompt: `Generate a comprehensive test case table based on the provided specification. Ensure that all functional, negative, edge, and integration scenarios are covered. Use ISO 25010 categories and priority levels. Follow the exact format from Test-Case-Table.html.`,
+        prompt: `Generate a comprehensive HTML test case table based on the provided specification. Ensure that all functional, negative, edge, and integration scenarios are covered. Use ISO 25010 categories and priority levels. Follow the exact format from Test-Case-Table.html.`,
       },
     ],
   },
