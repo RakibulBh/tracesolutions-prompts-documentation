@@ -40,9 +40,6 @@ export const GPTPrompts: ProviderPrompts = {
       {
         prompt: `Why is TC-001 a high priority?`,
       },
-      {
-        prompt: `Provide an overview of the different test case types`,
-      },
     ],
   },
 
