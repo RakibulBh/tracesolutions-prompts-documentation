@@ -14,7 +14,8 @@ export const claudePrompts: ProviderPrompts = {
     name: "Generate Test Cases",
     prompts: [
       {
-        prompt: `Follow the instructions and use your knowledge base to analyse and extract all the required test cases from requirements, including edge cases and error handling. The priority, and ISO category values should come from the knowledge base. An example of the HTML test case table format has been provided in test-case-table.html file. Only generate the HTML TEST CASE TABLE with all the extracted test cases, including the coverage status modals.`,
+        prompt: `PRIMARY REQUIREMENTS DOCUMENT: MP-XXXX
+                 Follow the instructions and use your knowledge base to analyse and extract all the required test cases from requirements, including edge cases and error handling. The priority and ISO category values should come from the knowledge base. An example of the HTML test case table format has been provided in test-case-table.html file. Only generate the HTML TEST CASE TABLE with all the extracted test cases, including the coverage status modals.`,
       },
       {
         prompt: "Generate more test cases",
@@ -131,7 +132,7 @@ export const claudeInfo: ToolInfo = {
   ],
   IO_sample: {
     input:
-      "Follow the instructions and use your knowledge base to analyse and extract all the required test cases from requirements, including edge cases and error handling. The priority, and ISO category values should come from the knowledge base. An example of the HTML test case table format has been provided in test-case-table.html file. Only generate the HTML TEST CASE TABLE with all the extracted test cases, including the coverage status modals.",
+      "PRIMARY REQUIREMENTS DOCUMENT: MP-8660\n\nFollow the instructions and use your knowledge base to analyse and extract all the required test cases from requirements, including edge cases and error handling. The priority and ISO category values should come from the knowledge base. An example of the HTML test case table format has been provided in test-case-table.html file. Only generate the HTML TEST CASE TABLE with all the extracted test cases, including the coverage status modals.",
     output: "Extracted test cases in a HTML formatted table with coverage modals.",
   },
   tips: [
