@@ -6,13 +6,17 @@ export const claudePrompts: ProviderPrompts = {
     name: "Initial Prompts",
     prompts: [
       {
-        prompt: `Project Initialisation Prompt Template from knowledge base`,
+        prompt: `You do not need an initialisation prompt. The Project Initialisation Prompt Template is already embedded in the knowledge base`,
       },
     ],
   },
   generate_test_cases: {
     name: "Generate Test Cases",
     prompts: [
+      
+      {
+        prompt: `Before copying the prmpt below, upload the specification document.`,
+      },
       {
         prompt: `PRIMARY REQUIREMENTS DOCUMENT: MP-XXXX
                  Follow the instructions and use your knowledge base to analyse and extract all the required test cases from requirements, including edge cases and error handling. The priority and ISO category values should come from the knowledge base. An example of the HTML test case table format has been provided in test-case-table.html file. Only generate the HTML TEST CASE TABLE with all the extracted test cases, including the coverage status modals.`,
@@ -128,7 +132,7 @@ export const claudeInfo: ToolInfo = {
     "Head to https://claude.ai/projects (NOTE: You need a Claude Pro License (https://www.anthropic.com/pricing))",
     'Click on "Create Project. Enter Name and Description"',
     "Upload the relevant documents listed above in the Project knowledge space on the right.",
-    "Start chatting by entering the Initial Prompt.",
+    "Start chatting by entering the Generate Test Cases Prompt (Note: The initial Promot is already embedded in the project knowledge).",
     "Proceed with all listed prompts in sequence.",
   ],
   IO_sample: {
