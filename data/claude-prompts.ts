@@ -125,10 +125,11 @@ export const claudeInfo: ToolInfo = {
     },
   ],
   setup_steps: [
-    "Head to https://claude.ai/projects",
-    'Click on "Create Project"',
-    "Upload the relevant documents listed above.",
-    "Begin chatting!",
+    "Head to https://claude.ai/projects (NOTE: You need a Claude Pro License (https://www.anthropic.com/pricing))",
+    'Click on "Create Project. Enter Name and Description"',
+    "Upload the relevant documents listed above in the Project knowledge space on the right.",
+    "Start chatting by entering the Initial Prompt.",
+    "Proceed with all listed prompts in sequence.",
   ],
   IO_sample: {
     input:
