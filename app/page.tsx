@@ -22,9 +22,9 @@ export default function Home() {
         </div>
       </div>
       <div className="p-4 rounded-md border-gray-300 border hover:border-[#001f3f] bg-[#F3F8F2] transition-all duration-300">
-        <Link href="/agent" className="block">
+        <Link href="/claude" className="block">
           <p className="text-gray-500 font-semibold">Next</p>
-          <p className="text-[#001f3f] font-bold">Agent Prompts</p>
+          <p className="text-[#001f3f] font-bold">Claude Prompts</p>
         </Link>
       </div>
     </div>

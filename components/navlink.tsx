@@ -20,8 +20,6 @@ const Navlink = ({ text, href }: navlinkProps) => {
         return <Cog color="#001f3f" className="group-hover:text-white" />;
       case "GPT":
         return <BookOpen color="#001f3f" className="group-hover:text-white" />;
-      case "Agent":
-        return <Bot color="#001f3f" className="group-hover:text-white" />;
       default:
       // code block
     }

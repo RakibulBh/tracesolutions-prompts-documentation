@@ -9,10 +9,6 @@ export const navlinks: navlink[] = [
     name: "General",
   },
   {
-    href: "/agent",
-    name: "Agent",
-  },
-  {
     href: "/claude",
     name: "Claude",
   },

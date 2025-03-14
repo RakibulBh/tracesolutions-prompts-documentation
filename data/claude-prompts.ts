@@ -102,7 +102,7 @@ export const claudeInfo: ToolInfo = {
     },
     {
       name: "Priority ISO categories document",
-      path: "/docs/priority_iso_categories_test_types.docx",
+      path: "/docs/priority_iso_categories.docx",
     },
     {
       name: "Detailed test case documentation Prompt document",
@@ -132,7 +132,7 @@ export const claudeInfo: ToolInfo = {
     "Head to https://claude.ai/projects (NOTE: You need a Claude Pro License (https://www.anthropic.com/pricing))",
     'Click on "Create Project. Enter Name and Description"',
     "Upload the relevant documents listed above in the Project knowledge space on the right.",
-    "Start chatting by entering the Generate Test Cases Prompt (Note: The initial Promot is already embedded in the project knowledge).",
+    "Start chatting by entering the Generate Test Cases Prompt (Note: The initial Prompt is already embedded in the project knowledge).",
     "Proceed with all listed prompts in sequence.",
   ],
   IO_sample: {
