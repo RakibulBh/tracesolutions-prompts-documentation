@@ -1,5 +1,5 @@
 "use client";
-import { BookOpen, Bot, ChevronRight, Cog } from "lucide-react";
+import { BookOpen, ChevronRight, Cog } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
