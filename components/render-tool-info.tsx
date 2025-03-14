@@ -1,3 +1,4 @@
+"use client";
 import { makeLinksClickable } from "@/app/utils/detectLink";
 import { ToolInfo } from "@/types/tool-info";
 import {
@@ -10,46 +11,54 @@ import {
 } from "lucide-react"; // Icons for visual distinction
 
 function ToolInfoSection({ data }: { data: ToolInfo }) {
+
+  // Function to download all documents
+  const downloadAllDocuments = () => {
+    if (data.documents) {
+      data.documents.forEach((doc, index) => {
+        if (typeof doc === "object" && doc.path) {
+          setTimeout(() => {
+            const link = document.createElement("a");
+            link.href = doc.path;
+            link.download = doc.name;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }, index * 500); // 500ms delay between each download
+        }
+      });
+    }
+  };
+
   return (
     <div className="space-y-8">
       {/* Documents Section */}
       {data.documents && (
         <div className="space-y-4">
-          <h1 className="font-semibold text-xl text-[#001f3f] flex items-center gap-2">
-            <FileText className="w-5 h-5" /> Documents Required
-          </h1>
+          {/* Header section with title and "Download All" button */}
+          <div className="flex items-center justify-between">
+            <h1 className="font-semibold text-xl text-[#001f3f] flex items-center gap-2">
+              <FileText className="w-5 h-5" /> Documents Required
+            </h1>
+            <button
+              onClick={downloadAllDocuments}
+              className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded"
+            >
+              Download All
+            </button>
+          </div>
+          {/* Documents grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {data.documents.map((doc, index) => {
-              // If doc is a string, simply display it as text.
-              if (typeof doc === "string") {
                 return (
                   <div
                     key={index}
                     className="bg-white border border-[#B8C8B9] rounded-lg p-4 flex flex-col items-center text-center hover:shadow-md transition-shadow"
                   >
                     <FileText className="w-8 h-8 text-[#A7C4BC]" />
-                    <p className="mt-2 text-[#001f3f] font-medium">{doc}</p>
+                    {typeof doc === "string" ? <p className="mt-2 text-[#001f3f] font-medium">{doc}</p> : <p className="mt-2 text-[#001f3f] font-medium">{doc.name}</p>}
                   </div>
                 );
-              }
-
-              // If doc is an object, show the name and provide a download link.
-              return (
-                <div
-                  key={doc.name}
-                  className="bg-white border border-[#B8C8B9] rounded-lg p-4 flex flex-col items-center text-center hover:shadow-md transition-shadow"
-                >
-                  <FileText className="w-8 h-8 text-[#A7C4BC]" />
-                  <p className="mt-2 text-[#001f3f] font-medium">{doc.name}</p>
-                  <a
-                    href={doc.path}
-                    download
-                    className="mt-2 text-blue-600 hover:underline"
-                  >
-                    Download
-                  </a>
-                </div>
-              );
             })}
           </div>
         </div>
