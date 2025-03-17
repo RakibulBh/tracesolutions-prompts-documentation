@@ -9,26 +9,72 @@ import {
   AlertTriangle,
   BadgeAlert,
 } from "lucide-react"; // Icons for visual distinction
+import JSZip from "jszip";
 
 function ToolInfoSection({ data }: { data: ToolInfo }) {
 
-  // Function to download all documents
-  const downloadAllDocuments = () => {
-    if (data.documents) {
-      data.documents.forEach((doc, index) => {
-        if (typeof doc === "object" && doc.path) {
-          setTimeout(() => {
-            const link = document.createElement("a");
-            link.href = doc.path;
-            link.download = doc.name;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-          }, index * 500); // 500ms delay between each download
-        }
-      });
+  const getFileExtensionFromContentType = (contentType: string | null): string => {
+  if (!contentType) return "";
+  if (
+    contentType.includes(
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    )
+  ) {
+    return ".docx";
+  }
+  if (contentType.includes("text/html")) {
+    return ".html";
+  }
+  return "";
+};
+
+  const downloadAllDocuments = async (): Promise<void> => {
+  if (data.documents && data.documents.length > 0) {
+    const zip = new JSZip();
+    const folder = zip.folder("documents");
+
+    if (!folder) {
+      console.error("Could not create a folder in the zip.");
+      return;
     }
-  };
+
+    for (const doc of data.documents) {
+      if (doc && typeof doc === "object" && doc.path) {
+        try {
+          const response = await fetch(doc.path);
+          if (!response.ok) {
+            console.error(`Failed to fetch ${doc.path}`);
+            continue;
+          }
+          const blob = await response.blob();
+          const contentType = response.headers.get("Content-Type");
+          const extension = getFileExtensionFromContentType(contentType);
+
+          // Check if the file name already has an extension.
+          const hasExtension = /\.[0-9a-z]+$/i.test(doc.name);
+          const fileName = hasExtension ? doc.name : doc.name + extension;
+
+          folder.file(fileName, blob);
+        } catch (error) {
+          console.error(`Error fetching ${doc.path}:`, error);
+        }
+      }
+    }
+
+    try {
+      const zipBlob = await zip.generateAsync({ type: "blob" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(zipBlob);
+      link.download = "documents.zip";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Error generating zip file:", error);
+    }
+  }
+};
+
 
   return (
     <div className="space-y-8">
