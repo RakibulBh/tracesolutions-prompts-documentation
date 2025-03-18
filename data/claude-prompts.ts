@@ -15,7 +15,7 @@ export const claudePrompts: ProviderPrompts = {
     prompts: [
       
       {
-        prompt: `Before copying the prmpt below, upload the specification document.`,
+        prompt: `Before copying the prompt below, upload the specification document.`,
       },
       {
         prompt: `PRIMARY REQUIREMENTS DOCUMENT: MP-XXXX
