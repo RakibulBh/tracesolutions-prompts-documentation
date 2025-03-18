@@ -18,7 +18,7 @@ export const GPTPrompts: ProviderPrompts = {
       },
     ],
   },
-  
+
   details_description: {
     name: "Generate Details Descriptions",
     prompts: [
@@ -27,6 +27,9 @@ export const GPTPrompts: ProviderPrompts = {
       },
       {
         prompt: `Generate a detailed test case description for test case TC-001, including test data, browser compatibility, and expected vs. actual results.`,
+      },
+      {
+        prompt: `[NEW] Generate me detailed test case description for TC-XXX. Refer to the "Detailed Test Description Sample" document and format the test steps exactly how it is on there. Then, STRICTLY refer to the "Mojo Guide for Works" document for Mojo's user manual when generating test steps and use the "Detailed description example document" document as a template for the output document. Do not infer the Test entry requirements/prerequisites or browser/device unless EXPLICITLY mentioned in the spec that is currently being analysed, otherwise mention that the data is not found in the spec.`,
       },
     ],
   },

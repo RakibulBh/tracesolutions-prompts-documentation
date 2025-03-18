@@ -12,69 +12,73 @@ import {
 import JSZip from "jszip";
 
 function ToolInfoSection({ data }: { data: ToolInfo }) {
-
-  const getFileExtensionFromContentType = (contentType: string | null): string => {
-  if (!contentType) return "";
-  if (
-    contentType.includes(
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-    )
-  ) {
-    return ".docx";
-  }
-  if (contentType.includes("text/html")) {
-    return ".html";
-  }
-  return "";
-};
+  const getFileExtensionFromContentType = (
+    contentType: string | null
+  ): string => {
+    if (!contentType) return "";
+    if (
+      contentType.includes(
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      )
+    ) {
+      return ".docx";
+    }
+    if (contentType.includes("text/html")) {
+      return ".html";
+    }
+    // Handle pdf
+    if (contentType.includes("application/pdf")) {
+      return ".pdf";
+    }
+    return "";
+  };
 
   const downloadAllDocuments = async (): Promise<void> => {
-  if (data.documents && data.documents.length > 0) {
-    const zip = new JSZip();
-    const folder = zip.folder("documents");
+    if (data.documents && data.documents.length > 0) {
+      const zip = new JSZip();
+      const folder = zip.folder("documents");
 
-    if (!folder) {
-      console.error("Could not create a folder in the zip.");
-      return;
-    }
+      if (!folder) {
+        console.error("Could not create a folder in the zip.");
+        return;
+      }
 
-    for (const doc of data.documents) {
-      if (doc && typeof doc === "object" && doc.path) {
-        try {
-          const response = await fetch(doc.path);
-          if (!response.ok) {
-            console.error(`Failed to fetch ${doc.path}`);
-            continue;
+      for (const doc of data.documents) {
+        if (doc && typeof doc === "object" && doc.path) {
+          try {
+            const response = await fetch(doc.path);
+            if (!response.ok) {
+              console.error(`Failed to fetch ${doc.path}`);
+              continue;
+            }
+            const blob = await response.blob();
+            const contentType = response.headers.get("Content-Type");
+            const extension = getFileExtensionFromContentType(contentType);
+
+            // Check if the file name already has an extension.
+            const hasExtension = /\.[0-9a-z]+$/i.test(doc.name);
+            const fileName = hasExtension ? doc.name : doc.name + extension;
+
+            folder.file(fileName, blob);
+          } catch (error) {
+            console.error(`Error fetching ${doc.path}:`, error);
           }
-          const blob = await response.blob();
-          const contentType = response.headers.get("Content-Type");
-          const extension = getFileExtensionFromContentType(contentType);
-
-          // Check if the file name already has an extension.
-          const hasExtension = /\.[0-9a-z]+$/i.test(doc.name);
-          const fileName = hasExtension ? doc.name : doc.name + extension;
-
-          folder.file(fileName, blob);
-        } catch (error) {
-          console.error(`Error fetching ${doc.path}:`, error);
         }
       }
-    }
 
-    try {
-      const zipBlob = await zip.generateAsync({ type: "blob" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(zipBlob);
-      link.download = "documents.zip";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error("Error generating zip file:", error);
+      try {
+        const zipBlob = await zip.generateAsync({ type: "blob" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(zipBlob);
+        link.download = "documents.zip";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch (error) {
+        console.error("Error generating zip file:", error);
+      }
     }
-  }
-};
-
+  };
 
   return (
     <div className="space-y-8">
@@ -96,20 +100,25 @@ function ToolInfoSection({ data }: { data: ToolInfo }) {
           {/* Documents grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {data.documents.map((doc, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="bg-white border border-[#B8C8B9] rounded-lg p-4 flex flex-col items-center text-center hover:shadow-md transition-shadow"
-                  >
-                    <FileText className="w-8 h-8 text-[#A7C4BC]" />
-                    {typeof doc === "string" ? <p className="mt-2 text-[#001f3f] font-medium">{doc}</p> : <p className="mt-2 text-[#001f3f] font-medium">{doc.name}</p>}
-                  </div>
-                );
+              return (
+                <div
+                  key={index}
+                  className="bg-white border border-[#B8C8B9] rounded-lg p-4 flex flex-col items-center text-center hover:shadow-md transition-shadow"
+                >
+                  <FileText className="w-8 h-8 text-[#A7C4BC]" />
+                  {typeof doc === "string" ? (
+                    <p className="mt-2 text-[#001f3f] font-medium">{doc}</p>
+                  ) : (
+                    <p className="mt-2 text-[#001f3f] font-medium">
+                      {doc.name}
+                    </p>
+                  )}
+                </div>
+              );
             })}
           </div>
         </div>
       )}
-
 
       {/* Prerequisites Section */}
       {data.prerequisites && (
