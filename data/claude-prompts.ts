@@ -14,7 +14,7 @@ export const claudePrompts: ProviderPrompts = {
     name: "Generate Test Cases",
     prompts: [
       {
-        prompt: `Before copying the prmpt below, upload the specification document.`,
+        prompt: `Before copying the prompt below, upload the specification document.`,
       },
       {
         prompt: `PRIMARY REQUIREMENTS DOCUMENT: MP-XXXX

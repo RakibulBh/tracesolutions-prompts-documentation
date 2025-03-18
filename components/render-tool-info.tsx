@@ -90,12 +90,12 @@ function ToolInfoSection({ data }: { data: ToolInfo }) {
             <h1 className="font-semibold text-xl text-[#001f3f] flex items-center gap-2">
               <FileText className="w-5 h-5" /> Documents Required
             </h1>
-            <button
+            {data.troubleshooting ? <button
               onClick={downloadAllDocuments}
               className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded"
             >
               Download All
-            </button>
+            </button> : ""}
           </div>
           {/* Documents grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
