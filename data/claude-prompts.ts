@@ -30,7 +30,7 @@ export const claudePrompts: ProviderPrompts = {
     name: "Generate Details Descriptions",
     prompts: [
       {
-        prompt: `Generate me detailed test case description for TC-XXX. Refer to the "Detailed Test Description Sample" document and format the test steps exactly how it is on there. Then, STRICTLY refer to the "Mojo Guide for Works" document for Mojo's user manual when generating test steps and use the "Detailed description example document" document as a template for the output document. Do not infer the Test entry requirements/prerequisites or browser/device unless EXPLICITLY mentioned in the spec that is currently being analysed, otherwise mention that the data is not found in the spec.`,
+        prompt: `Generate me detailed test case description for TC-XXX. Refer to the "Detailed Test Description Sample" document and format the test steps exactly how it is on there. Then, STRICTLY refer to the "User Manual" document for the system's user manual when generating test steps and use the "Detailed description example document" document as a template for the output document. Do not infer the Test entry requirements/prerequisites or browser/device unless EXPLICITLY mentioned in the spec that is currently being analysed, otherwise mention that the data is not found in the spec.`,
       },
     ],
   },
@@ -125,10 +125,6 @@ export const claudeInfo: ToolInfo = {
     },
     { name: "Gap analysis template", path: "/docs/gap-analysis.html" },
     {
-      name: "Mojo User's Manual",
-      path: "/docs/Mojo_Guide_for_Works.pdf",
-    },
-    {
       name: "Detailed Test Description Steps Template",
       path: "/docs/Detailed_Test_Description_Sample.docx",
     },
@@ -138,6 +134,7 @@ export const claudeInfo: ToolInfo = {
     'Click on "Create Project. Enter Name and Description"',
     "Upload the relevant documents listed above in the Project knowledge space on the right.",
     "Start chatting by entering the Generate Test Cases Prompt (Note: The initial Prompt is already embedded in the project knowledge).",
+    "Upload the User Manual document related to specification and make sure it is named 'User Manual'.",
     "Proceed with all listed prompts in sequence.",
   ],
   IO_sample: {
