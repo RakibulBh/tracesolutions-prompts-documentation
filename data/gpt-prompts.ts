@@ -2,14 +2,6 @@ import { ProviderPrompts } from "@/types/prompts";
 import { ToolInfo } from "@/types/tool-info";
 
 export const GPTPrompts: ProviderPrompts = {
-  initial_prompts: {
-    name: "Initial Prompts",
-    prompts: [
-      {
-        prompt: `N/A (initial prompt is baked in.)`,
-      },
-    ],
-  },
   generate_test_cases: {
     name: "Generate Test Cases",
     prompts: [
@@ -26,10 +18,7 @@ export const GPTPrompts: ProviderPrompts = {
         prompt: `Provide detailed descriptions for all test cases in the existing test case table. Ensure each description includes prerequisites, test steps, expected outcomes, and validation criteria. Follow the format in Detailed-Descriptions.html.`,
       },
       {
-        prompt: `Generate a detailed test case description for test case TC-001, including test data, browser compatibility, and expected vs. actual results.`,
-      },
-      {
-        prompt: `[NEW] Generate me detailed test case description for TC-XXX. Refer to the "Detailed Test Description Sample" document and format the test steps exactly how it is on there. Then, STRICTLY refer to the "Mojo Guide for Works" document for Mojo's user manual when generating test steps and use the "Detailed description example document" document as a template for the output document. Do not infer the Test entry requirements/prerequisites or browser/device unless EXPLICITLY mentioned in the spec that is currently being analysed, otherwise mention that the data is not found in the spec.`,
+        prompt: `Generate a detailed test case description for test case TC-XXX, including test data, browser compatibility, and expected vs. actual results.`,
       },
     ],
   },
@@ -38,10 +27,7 @@ export const GPTPrompts: ProviderPrompts = {
     name: "Explain Test Properties",
     prompts: [
       {
-        prompt: `Explain how test priorities are determined based on business impact and severity.`,
-      },
-      {
-        prompt: `Why is TC-001 a high priority?`,
+        prompt: `Why is TC-XXX considered XXX priority? Explain how based on the Priority ISO Categories document`,
       },
     ],
   },
@@ -50,10 +36,7 @@ export const GPTPrompts: ProviderPrompts = {
     name: "Generate Requirements",
     prompts: [
       {
-        prompt: `Identify missing or ambiguous requirements that could lead to coverage gaps in testing.`,
-      },
-      {
-        prompt: `Extract all functional and non-functional requirements from the provided documentation.`,
+        prompt: `Extract all functional and non-functional requirements from the provided specification and supporting documentation.`,
       },
     ],
   },
@@ -62,7 +45,7 @@ export const GPTPrompts: ProviderPrompts = {
     name: "Generate Coverage Report",
     prompts: [
       {
-        prompt: `Generate a test coverage report analysing how well the test cases cover the provided requirements.`,
+        prompt: `Generate a test coverage report analysing how well the test cases cover the provided requirements, refer to your knowledge base for example documentation.`,
       },
       {
         prompt: `Identify gaps in coverage and suggest additional test cases to improve specification and requirement validation.`,
@@ -78,12 +61,14 @@ export const GPTInfo: ToolInfo = {
   documents: ["Specification"],
   setup_steps: [
     "Head to https://chatgpt.com/g/g-67a5139a09cc819180fa6db4e9890502-test-case-generator",
+    "The model does not require any configuration or setup, all required documentation and instructions are already contained within the model's knowledge base."
   ],
   tips: [
-    "if the model gives a response which is not exactly what you requested, respond with a message pointing out the error and model will immediately correct itself, no need to restart/regenerate the conversation.",
+    "If the model gives a response which is not exactly what you requested, respond with a message pointing out the error and model will immediately correct itself, no need to restart/regenerate the conversation.",
+    "Currently Custom GPT models are based solely on ChatGPT 4o and as a result have limited analysation capabilities.",
   ],
   limits: [
-    "currently the model is unable to perform requirements analysis or extraction due to lacking the required knowledge/documentation",
-    "it is important to double check the coverage reports produced by the model as these have a similar issue of lacking documentation that the model can use for training.",
+    "This Custom GPT model is highly experimental and requires further instructional tuning in order to improve results. ",
+    "The Custom GPT framework is currently unstable, this is unfortunately a problem with Custom GPT's as a whole, and not unique to this particular model."
   ],
 };
