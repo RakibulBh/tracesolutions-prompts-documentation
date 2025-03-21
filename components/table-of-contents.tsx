@@ -5,18 +5,17 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import React from "react";
 
-function getCurrentData() {
-  const pathname = usePathname();
-  if (pathname.endsWith("/gpt")) {
-  return GPTPrompts;
-  }
-  else if (pathname.endsWith("/claude")) {
-  return claudePrompts;
-  }
-  return claudePrompts;
-};
-
 const TableOfContents = () => {
+  const pathname = usePathname();
+  function getCurrentData() {
+    if (pathname.endsWith("/gpt")) {
+    return GPTPrompts;
+    }
+    else if (pathname.endsWith("/claude")) {
+    return claudePrompts;
+    }
+    return claudePrompts;
+  };
   const data = getCurrentData();
   return (
     <div className="space-y-4">
