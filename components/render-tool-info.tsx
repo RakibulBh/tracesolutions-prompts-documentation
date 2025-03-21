@@ -8,7 +8,7 @@ import {
   Lightbulb,
   AlertTriangle,
   BadgeAlert,
-} from "lucide-react"; // Icons for visual distinction
+} from "lucide-react";
 import JSZip from "jszip";
 
 function ToolInfoSection({ data }: { data: ToolInfo }) {
@@ -90,15 +90,19 @@ function ToolInfoSection({ data }: { data: ToolInfo }) {
             <h1 className="font-semibold text-xl text-[#001f3f] flex items-center gap-2">
               <FileText className="w-5 h-5" /> Documents Required
             </h1>
-            {data.troubleshooting ? <button
-              onClick={downloadAllDocuments}
-              className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded"
-            >
-              Download All
-            </button> : ""}
+            {data.troubleshooting ? (
+              <button
+                onClick={downloadAllDocuments}
+                className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded"
+              >
+                Download All
+              </button>
+            ) : (
+              ""
+            )}
           </div>
           {/* Documents grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {data.documents.map((doc, index) => {
               return (
                 <div
@@ -173,7 +177,7 @@ function ToolInfoSection({ data }: { data: ToolInfo }) {
           <h1 className="font-semibold text-xl text-[#001f3f] flex items-center gap-2">
             🔄 Input and Output Sample
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div className="bg-[#F3F8F2] border border-[#B8C8B9] rounded-lg p-4">
               <p className="font-medium text-[#001f3f]">Input</p>
               <p className="mt-2 text-[#001f3f]">{data.IO_sample.input}</p>
