@@ -4,6 +4,7 @@ import TableOfContents from "@/components/table-of-contents";
 import { claudeInfo, claudePrompts } from "@/data/claude-prompts";
 import React from "react";
 
+
 const Page = () => {
   return (
     <div className="p-4 flex-1 bg-[#F3F8F2] space-y-4 overflow-y-scroll h-full">
